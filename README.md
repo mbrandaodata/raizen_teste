@@ -1,7 +1,9 @@
 # raizen_teste
 - Teste utilizando Python 3.9.6
+- Bibliotecas: Pandas 
 
-## Algoritimo utilizado
+
+## Algoritmo utilizado
 ____
 1. Importação do Arquivo
 2. Renomeando colunas 
