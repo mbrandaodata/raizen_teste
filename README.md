@@ -10,5 +10,6 @@ ____
 3. Agrupamento e Somas
 4. Transformação de Colunas em Linha
 5. Criando DF e sequenciando as colunas conforme teste
-6. Trabalhando os DataType
-7. Exportando o Relatório Final
+6. Adicionando a coluna Created_At
+7. Trabalhando os DataType
+8. Exportando o Relatório Final
