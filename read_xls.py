@@ -1,7 +1,6 @@
 import pandas as pd 
 import numpy as np
 from datetime import datetime 
-created_at = datetime.today()
 
 arquivo = pd.ExcelFile("/Users/marciojunior/Documents/telecine/z-rz/vendas-combustiveis-m3.xls")
 
@@ -27,19 +26,13 @@ var_name='YEAR_MONTH', value_name='VOLUME')
 df_result_final_tb1 = pd.DataFrame(data=pivot_tb1, columns=['YEAR_MONTH','UF','PRODUCT','UNIT','VOLUME'])
 df_result_final_tb2 = pd.DataFrame(data=pivot_tb2, columns=['YEAR_MONTH','UF','PRODUCT','UNIT','VOLUME'])
 
-#adicionando a coluna created_at com valor default de hoje
-df_result_final_tb1['CREATED_AT']=created_at
-df_result_final_tb2['CREATED_AT']=created_at
-
-
 #trabalhando os tipos
 df_result_final_tb1.astype({
     'YEAR_MONTH':'datetime64',
     'UF':'string',
     'PRODUCT':'string',
     'UNIT':'string',
-    'VOLUME':'double',
-    'CREATED_AT':'datetime64'
+    'VOLUME':'double'
 })
 
 df_result_final_tb2.astype({
@@ -47,10 +40,8 @@ df_result_final_tb2.astype({
     'UF':'string',
     'PRODUCT':'string',
     'UNIT':'string',
-    'VOLUME':'double',
-    'CREATED_AT':'datetime64'
+    'VOLUME':'double'
 })
 
-#export do relatorio final
 final_tb1 = df_result_final_tb1.to_excel('/Users/marciojunior/Documents/telecine/z-rz/output_sales_of_oil_by_uf_and_product.xls')
 final_tb2 = df_result_final_tb2.to_excel('/Users/marciojunior/Documents/telecine/z-rz/output_sales_of_diesel_by_uf_and_product.xls')
